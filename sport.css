@@ -2156,6 +2156,7 @@ textarea.form-control.is-invalid {
     display: inline-block;
     font-weight: 400;
     color: #666;
+    text-align: left;
     vertical-align: middle;
     user-select: none;
     background-color: transparent;
