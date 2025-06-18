@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Gymnast - Gym Website Template</title>
@@ -790,7 +789,29 @@
     <script src="https://plantillashtmlgratis.com/wp-content/themes/helium-child/vista_previa/page276/gymnast/lib/easing/easing.min.js"></script>
     <script src="https://plantillashtmlgratis.com/wp-content/themes/helium-child/vista_previa/page276/gymnast/lib/waypoints/waypoints.min.js"></script>
     <!-- Template Javascript -->
-    <script>
+	<script>
+		const dataUrl = "https://opensheet.elk.sh/1DQ_xeDqncKkG_NpWDaY1khOgdi0Hk6jDDGSCgMsZudc/Teams";
+		fetch(dataUrl)
+			.then((res) => res.json())
+			.then((slides) => {
+				const inner = $(".carousel-inner");
+				slides.forEach((s, i) => {
+					const item = $(`
+		<div class="carousel-item${i === 0 ? " active" : ""}">
+		  <img class="w-100" src="${s.imagen}" alt="Slide ${i + 1}">
+		  <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+			<h4 class="text-white text-capitalize m-0">${s.edicion}</h4>
+			<h2 class="display-2 m-0 mt-0 mt-md-4 mb-2 text-white fw-bold text-capitalize">${s.nombre_torneo}</h2>
+			<a href="${s.enlace_boton}" class="btn btn-lg btn-outline-light mt-5 mt-md-5 py-md-3 px-md-5">${s.texto_boton}</a>
+		  </div>
+		</div>
+	  `);
+		inner.append(item);
+			});
+		})
+		.catch(console.error);
+	</script>
+	<script>
 		const form = document.getElementById("formulario-contacto");
 		form.addEventListener("submit", (e) => {
 			e.preventDefault();
@@ -806,7 +827,8 @@
 
 			form.reset();
 		});
-	
+	</script>
+    <script>
 		(function ($) {
 		"use strict";
 		
