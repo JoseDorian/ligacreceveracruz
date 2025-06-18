@@ -8673,7 +8673,7 @@ a.text-dark:hover {
 }
 .gym-class {
     position: relative;
-    margin-top: 90px;
+    margin-top: 0px;
 }
 .gym-class .gym-class-box {
     min-height: 450px;
